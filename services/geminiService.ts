@@ -3,7 +3,7 @@ import { GoogleGenAI } from "@google/genai";
 import { ModuleInput } from "../types";
 
 export const generateTeachingModule = async (input: ModuleInput): Promise<string> => {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || 'FAKE_API_KEY_FOR_DEVELOPMENT' });
   
   const prompt = `
     Anda adalah AI ahli kurikulum dan perancang Modul Ajar Deep Learning Kurikulum Merdeka jenjang SMP.
